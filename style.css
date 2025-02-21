@@ -1,0 +1,280 @@
+/* Import Google font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+body{
+  padding: 0 10px;
+  min-height: 100vh;
+  background-image: url(9791334.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.wrapper{
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 650px;
+  height: 650px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+  border-radius: 50%;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  background-image: url(Screenshot\ 2025-02-21\ 152203.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: -5px -1px;
+  
+}
+
+
+
+
+.wrapper header{
+  display: flex;
+  align-items: center;
+  padding: 25px 30px 10px;
+  justify-content: space-between;
+}
+
+header .icons{
+  display: flex;
+}
+
+header .icons span{
+  height: 38px;
+  width: 38px;
+  margin: 0 1px;
+  cursor: pointer;
+  color: #878787;
+  text-align: center;
+  line-height: 38px;
+  font-size: 1.9rem;
+  user-select: none;
+  border-radius: 50%;
+}
+
+.icons span:last-child{
+  margin-right: -10px;
+}
+
+header .icons span:hover{
+  background: #f2f2f2;
+}
+
+header .current-date{
+  font-size: 1.45rem;
+  font-weight: 500;
+}
+
+.calendar{
+  padding: 20px;
+}
+
+.calendar ul{
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  text-align: center;
+}
+
+.calendar .days{
+  margin-bottom: 20px;
+}
+
+.calendar li{
+  color: #333;
+  width: calc(100% / 7);
+  font-size: 1.07rem;
+}
+
+.calendar .weeks li{
+  font-weight: 500;
+  cursor: default;
+}
+
+.calendar .days li{
+  z-index: 1;
+  cursor: pointer;
+  position: relative;
+  margin-top: 30px;
+  transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth transition for scaling and background */
+}
+
+.days li.inactive{
+  color: #aaa;
+}
+
+.days li.active{
+  color: #fff;
+}
+
+.days li::before{
+  position: absolute;
+  content: "";
+  left: 50%;
+  top: 50%;
+  height: 40px;
+  width: 40px;
+  z-index: -1;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.days li.active::before{
+  background: #9B59B6;
+}
+
+.days li:not(.active):hover::before{
+  background: #f2f2f2;
+}
+
+.days li:hover {
+  background-color: #f2f2f2; /* Background turns grey on hover */
+  transform: scale(1.1); /* Smooth scale on hover */
+}
+
+.footer{
+    margin-top: 30px;
+    color: white;
+    text-align: center;
+}
+
+.footer::before{
+    content: "";
+    background: #000;
+    height: 5px;
+    width: 10px;
+}
+
+.info {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 cards per row */
+    gap: 20px; /* Adjust the gap between cards */
+    padding: 20px; /* Padding around the grid */
+}
+
+.info-details {
+    border: 1px solid #ccc; /* Border for each card */
+    padding: 15px;
+    background-color: hsl(291, 58%, 44%);
+    border-radius: 8px;
+    color: white;
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth transition for scale and color */
+}
+
+.info-details h1 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.info-details p {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.info-details:hover{
+    transform: scale(1.1); /* Smooth scaling on hover */
+    background-color: hsl(288, 68%, 60%);
+    cursor: pointer;
+}
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 1200px) {
+    .wrapper {
+        width: 500px; /* Smaller size for tablets and small laptops */
+        height: 500px;
+    }
+
+    .info {
+        grid-template-columns: repeat(4, 1fr); /* 4 cards per row on medium screens */
+    }
+
+    .info-details h1 {
+        font-size: 16px; /* Adjust font size */
+    }
+
+    .info-details p {
+        font-size: 12px; /* Adjust font size */
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .wrapper {
+        width: 400px; /* Smaller size for smaller tablets */
+        height: 400px;
+    }
+
+    .info {
+        grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+    }
+
+    .info-details h1 {
+        font-size: 14px; /* Adjust font size */
+    }
+
+    .info-details p {
+        font-size: 12px; /* Adjust font size */
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .wrapper {
+        width: 300px; /* Smaller size for mobile */
+        height: 300px;
+    }
+
+    .info {
+        grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+    }
+
+    .info-details h1 {
+        font-size: 12px; /* Adjust font size */
+    }
+
+    .info-details p {
+        font-size: 10px; /* Adjust font size */
+    }
+
+    .footer {
+        font-size: 12px; /* Smaller footer text on mobile */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .wrapper {
+        width: 250px; /* Very small for small mobile devices */
+        height: 250px;
+    }
+
+    .info {
+        grid-template-columns: 1fr; /* 1 card per row */
+    }
+
+    .info-details h1 {
+        font-size: 10px; /* Smaller font size */
+    }
+
+    .info-details p {
+        font-size: 8px; /* Smaller font size */
+    }
+
+    .footer {
+        font-size: 10px; /* Smaller footer text */
+    }
+}
